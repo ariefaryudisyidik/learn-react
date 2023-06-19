@@ -11,19 +11,21 @@
     <script type="text/babel">
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
-      root.render(
-        <>
-          <h1>Hello World</h1>
-          <img src="img/img.png" width="80" alt="Image" />
-          <p
-            onClick={(e) => {
-              alert("Happy Learning!");
-            }}
-          >
-            Learning React is easy right?
-          </p>
-        </>
-      );
+
+      function Header(props) {
+        return <h1>Hello {props.name}</h1>;
+      }
+
+      function HomePage() {
+        return (
+          <>
+            <Header name="World" />
+            <Header name="React" />
+          </>
+        );
+      }
+
+      root.render(<HomePage />);
     </script>
   </body>
 </html>
