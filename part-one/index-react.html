@@ -17,10 +17,15 @@
       }
 
       function HomePage() {
+        const students = ["Arief", "Fajar", "Ricky"];
         return (
           <>
-            <Header />
             <Header name="React" />
+            <ul>
+              {students.map((student) => (
+                <li key={student}>{student}</li>
+              ))}
+            </ul>
           </>
         );
       }
